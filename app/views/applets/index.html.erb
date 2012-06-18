@@ -1,0 +1,29 @@
+<h1>Listing applets</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Style</th>
+    <th>Javascript</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @applets.each do |applet| %>
+  <tr>
+    <td><%= applet.title %></td>
+    <td><%= applet.content %></td>
+    <td><%= applet.style %></td>
+    <td><%= applet.javascript %></td>
+    <td><%= link_to 'Show', applet %></td>
+    <td><%= link_to 'Edit', edit_applet_path(applet) %></td>
+    <td><%= link_to 'Destroy', applet, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Applet', new_applet_path %>

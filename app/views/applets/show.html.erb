@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @applet.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @applet.content.html_safe %>
+</p>
+
+<p>
+  <b>Style:</b>
+  <script type="text/javascript"  charset="utf-8">
+    <%= @applet.javascript.html_safe  %>
+  </script>
+</p>
+
+<p>
+  <b>Javascript:</b>
+   <style>
+    <!--
+      <%= @applet.style.html_safe %>
+    -->
+   </style>
+</p>
+
+
+<%= link_to 'Edit', edit_applet_path(@applet) %> |
+<%= link_to 'Back', applets_path %>

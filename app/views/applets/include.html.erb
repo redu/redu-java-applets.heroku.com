@@ -1,0 +1,14 @@
+<% unless @applet.javascript.blank? %>
+  <script type="text/javascript"  charset="utf-8">
+    <%= @applet.javascript.html_safe  %>
+  </script>
+<% end %>
+<% unless @applet.style.blank? %>
+   <style>
+    <!--
+      <%= @applet.style.html_safe %>
+    -->
+   </style>
+<% end %>
+
+<%= @applet.content.html_safe %>
