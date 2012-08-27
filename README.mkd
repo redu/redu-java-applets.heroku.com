@@ -1,0 +1,34 @@
+## Redu Apps App
+
+This project intend to be a app host for [Redu](http://developers.redu.com.br) API.
+
+## Quickstart
+
+Requirements:
+
+- Ruby 1.9.2 (see [RVM](http://rvm.io))
+- Bundler
+
+Installing:
+
+```sh
+$ > git clone git@github.com:redu/redu-java-applets.heroku.com.git
+$ > cd redu-java-applets.heroku.com
+$ > bundle
+$ > rake db:migrate
+$ > rails s
+```
+
+That is it. Just visit http://0.0.0.0:3000
+
+## Setting up users
+
+To access the restrict pages you need to login as a valid user. In order to create the user connect to rails console and execute the following commands:
+
+```sh
+$ > rails c
+Loading development environment (Rails 3.2.5)
+1.8.7 :001 > u = User.create(:email => "guilhermec@redu.com.br", :password => "pass")
+```
+
+To login access http://0.0.0.0:3000/sessions/new

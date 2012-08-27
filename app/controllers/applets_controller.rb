@@ -88,7 +88,7 @@ class AppletsController < ApplicationController
     @applet = Applet.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :action => :include, :layout => "clean" }
       format.json { render :json => @applet }
     end
   end
