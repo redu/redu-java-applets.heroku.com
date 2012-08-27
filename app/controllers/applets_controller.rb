@@ -1,5 +1,7 @@
 
 class AppletsController < ApplicationController
+  skip_before_filter :ensure_user, :only => :include
+
   # GET /applets
   # GET /applets.json
   def index
