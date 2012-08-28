@@ -10,15 +10,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120827213856) do
+ActiveRecord::Schema.define(:version => 20120828115519) do
 
   create_table "applets", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.text     "style"
     t.text     "javascript"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.text     "objective"
+    t.text     "abstract"
+    t.text     "curriculum"
+    t.string   "theme"
+    t.string   "author"
+    t.string   "language"
+    t.string   "country"
+    t.string   "publisher"
+    t.text     "description"
+    t.string   "rightsholder"
+    t.string   "submiter"
+    t.string   "address"
+    t.string   "license"
+    t.string   "uri"
+    t.string   "other_links"
   end
 
   create_table "users", :force => true do |t|

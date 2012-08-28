@@ -54,6 +54,21 @@ class AppletsController < ApplicationController
     param "content", String, :desc => "Object HTML"
     param "style", String, :desc => "Object CSS"
     param "javascript", String, :descr => "Object JS"
+    param "objective", String
+    param "abstract", String
+    param "curriculum", String
+    param "theme", String
+    param "author", String
+    param "language", String
+    param "country", String
+    param "publisher", String
+    param "description", String
+    param "rightsholder", String
+    param "submiter", String
+    param "address", String
+    param "license", String
+    param "uri", String
+    param "other_links", String
   end
   def create
     @applet = Applet.new(params[:applet])
