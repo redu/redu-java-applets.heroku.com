@@ -2,8 +2,14 @@
 class AppletsController < ApplicationController
   skip_before_filter :ensure_user, :only => :include
 
-  # GET /applets
-  # GET /applets.json
+  resource_description do
+    name "Applets"
+    path "/applets"
+    formats ['json', 'xml']
+    param :token, String, :desc => "The API token.", :required => true
+  end
+
+  api :GET, "applets", "Lists created objects"
   def index
     @applets = Applet.all
 
@@ -13,8 +19,9 @@ class AppletsController < ApplicationController
     end
   end
 
-  # GET /applets/1
-  # GET /applets/1.json
+  api :GET, "applets/:id", "Retreives the applet"
+  error :code => 404, :desc => "Not Found"
+  param :id, Fixnum, :desc => "Id do objeto de aprendizagem", :required => true
   def show
     @applet = Applet.find(params[:id])
 
@@ -40,8 +47,14 @@ class AppletsController < ApplicationController
     @applet = Applet.find(params[:id])
   end
 
-  # POST /applets
-  # POST /applets.json
+  api :POST, "applets/:id", "Creates the applet"
+  error :code => 404, :desc => "Not Found"
+  param :applet, Hash do
+    param "title", String, :desc => "Object title"
+    param "content", String, :desc => "Object HTML"
+    param "style", String, :desc => "Object CSS"
+    param "javascript", String, :descr => "Object JS"
+  end
   def create
     @applet = Applet.new(params[:applet])
 
