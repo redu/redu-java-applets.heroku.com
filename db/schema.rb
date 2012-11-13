@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,30 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120828115519) do
+ActiveRecord::Schema.define(:version => 20121113134529) do
 
   create_table "applets", :force => true do |t|
-    t.string   "title"
+    t.string   "title",        :limit => 500
     t.text     "content"
     t.text     "style"
     t.text     "javascript"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.text     "objective"
     t.text     "abstract"
     t.text     "curriculum"
-    t.string   "theme"
-    t.string   "author"
-    t.string   "language"
-    t.string   "country"
-    t.string   "publisher"
+    t.string   "theme",        :limit => 500
+    t.string   "author",       :limit => 500
+    t.string   "language",     :limit => 500
+    t.string   "country",      :limit => 500
+    t.string   "publisher",    :limit => 500
     t.text     "description"
-    t.string   "rightsholder"
-    t.string   "submiter"
-    t.string   "address"
-    t.string   "license"
-    t.string   "uri"
-    t.string   "other_links"
+    t.string   "rightsholder", :limit => 500
+    t.string   "submiter",     :limit => 500
+    t.string   "address",      :limit => 500
+    t.string   "license",      :limit => 500
+    t.string   "uri",          :limit => 500
+    t.string   "other_links",  :limit => 500
   end
 
   create_table "users", :force => true do |t|
