@@ -6,8 +6,13 @@
 </p>
 
 <p>
+  <b>Applet type:</b>
+  <%= @applet.applet_type %>
+</p>
+
+<p>
   <b>Content:</b>
-  <%= @applet.content.html_safe %>
+  <%= @applet.include_snippet(@width, @height).html_safe %>
 </p>
 
 <p>

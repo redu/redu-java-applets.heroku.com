@@ -69,6 +69,8 @@ class AppletsController < ApplicationController
     param "license", String
     param "uri", String
     param "other_links", String
+    param "applet_tyoe", String
+    param "direct_url", String
   end
   def create
     @applet = Applet.new(params[:applet])
@@ -114,6 +116,8 @@ class AppletsController < ApplicationController
 
   def include
     @applet = Applet.find(params[:id])
+    @width = params.fetch(:width, 720)
+    @height = params.fetch(:height, 340)
 
     respond_to do |format|
       format.html { render :action => :include, :layout => "clean" }

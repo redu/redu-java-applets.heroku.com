@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121113134529) do
+ActiveRecord::Schema.define(:version => 20121126204121) do
 
   create_table "applets", :force => true do |t|
     t.string   "title",        :limit => 500
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20121113134529) do
     t.string   "license",      :limit => 500
     t.string   "uri",          :limit => 500
     t.string   "other_links",  :limit => 500
+    t.string   "applet_type"
+    t.string   "direct_url"
   end
 
   create_table "users", :force => true do |t|
